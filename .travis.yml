@@ -14,7 +14,7 @@ after_success:
   - docker build -t akxrawatar/multi-nginx ./nginx
   - docker build -t akxrawatar/multi-server ./server
   - docker build -t akxrawatar/multi-worker ./worker
-  # log in to docker CLI
+  # log in to docker CLI by saving credentials to travis
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
   #take these images and push them to docker hub
   - docker push akxrawatar/multi-client
